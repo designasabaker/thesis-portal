@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <link rel="stylesheet" href="style.css"/>
+    <title>GYXU</title>
+</head>
+<body>
+    <form name=loading id="loadingForm"> 
+        <span>LOADING: &nbsp</span>
+        <input 
+            type=text 
+            id="chart"
+            name=chart > 
+        &nbsp
+        <input 
+            type=text 
+            id="percent"
+            name=percent > 
+    </form>
+</body>
+<script>
+    let bar=0;
+    const line="||";
+    let amount="||";
+
+    const chart = document.getElementById("chart");
+    const percent = document.getElementById("percent");
+
+    count();
+
+    function count(){
+        bar = bar + 2;
+        amount = amount + line;
+        chart.value = amount;
+        percent.value = `${bar}%`;
+        if (bar<99)
+            setTimeout("count()", 30);
+        else
+            window.location = "https://designasabaker.github.io/react-tailwindcss-portfolio/";
+    }
+</script> 
+</html>
